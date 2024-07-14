@@ -3,26 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro e Inicio de Sesión</title>
+    <title>Test</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <form id="registerForm" class="form">
-            <h2>Registro</h2>
-            <input type="email" id="registerEmail" placeholder="Email" required>
-            <input type="password" id="registerPassword" placeholder="Contraseña" required>
-            <button type="submit">Registrar</button>
+        <nav>
+            <a href="index.html">Registro</a>
+            <a href="login.html">Iniciar Sesión</a>
+        </nav>
+        <h2>Test</h2>
+        <form id="testForm" class="form">
+            <div class="question">
+                <label for="question1">Pregunta 1:</label>
+                <input type="text" id="question1" required>
+            </div>
+            <button type="submit">Enviar</button>
         </form>
-
-        <form id="loginForm" class="form">
-            <h2>Iniciar Sesión</h2>
-            <input type="email" id="loginEmail" placeholder="Email" required>
-            <input type="password" id="loginPassword" placeholder="Contraseña" required>
-            <button type="submit">Iniciar Sesión</button>
-        </form>
+        <div id="result"></div>
     </div>
-
     <script src="scripts.js"></script>
 </body>
 </html>

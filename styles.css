@@ -1,47 +1,73 @@
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    background-color: #f0f0f0;
     margin: 0;
+    padding: 0;
 }
 
 .container {
+    max-width: 600px;
+    margin: 50px auto;
     background-color: #fff;
     padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .form {
     margin-bottom: 20px;
 }
 
-.form h2 {
+form h2 {
+    font-size: 24px;
     margin-bottom: 10px;
 }
 
-.form input {
-    display: block;
+form input[type="email"],
+form input[type="password"],
+form input[type="text"] {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
+    margin: 5px 0;
     border: 1px solid #ccc;
-    border-radius: 3px;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
-.form button {
-    padding: 10px;
-    background-color: #28a745;
-    color: #fff;
+form button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
     border: none;
-    border-radius: 3px;
+    border-radius: 4px;
     cursor: pointer;
+    font-size: 16px;
 }
 
+form button:hover {
+    background-color: #45a049;
+}
+
+p {
+    font-size: 14px;
+    text-align: center;
+}
+
+p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos específicos para el resultado del test */
 #result {
     margin-top: 20px;
-    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
 }

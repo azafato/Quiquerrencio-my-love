@@ -5,32 +5,37 @@ document.addEventListener("DOMContentLoaded", function() {
     const resultDiv = document.getElementById("result");
 
     // Simulación de una base de datos en memoria
-    const users = [];
+    const users = JSON.parse(localStorage.getItem("users")) || [];
 
     // Registro de usuario
-    registerForm.addEventListener("submit", function(e) {
-        e.preventDefault();
-        const email = document.getElementById("registerEmail").value;
-        const password = document.getElementById("registerPassword").value;
-        users.push({ email, password });
-        alert("Registro exitoso!");
-        registerForm.reset();
-    });
+    if (registerForm) {
+        registerForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            const email = document.getElementById("registerEmail").value;
+            const password = document.getElementById("registerPassword").value;
+            users.push({ email, password });
+            localStorage.setItem("users", JSON.stringify(users));
+            alert("Registro exitoso! Ahora puedes iniciar sesión.");
+            window.location.href = "login.html";  // Redirige a la página de inicio de sesión
+        });
+    }
 
     // Inicio de sesión
-    loginForm.addEventListener("submit", function(e) {
-        e.preventDefault();
-        const email = document.getElementById("loginEmail").value;
-        const password = document.getElementById("loginPassword").value;
-        const user = users.find(user => user.email === email && user.password === password);
-        if (user) {
-            alert("Inicio de sesión exitoso!");
-            window.location.href = "test.html";
-        } else {
-            alert("Credenciales incorrectas!");
-        }
-        loginForm.reset();
-    });
+    if (loginForm) {
+        loginForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            const email = document.getElementById("loginEmail").value;
+            const password = document.getElementById("loginPassword").value;
+            const user = users.find(user => user.email === email && user.password === password);
+            if (user) {
+                alert("Inicio de sesión exitoso!");
+                window.location.href = "test.html";  // Redirige a la página del test
+            } else {
+                alert("Credenciales incorrectas!");
+            }
+            loginForm.reset();
+        });
+    }
 
     // Envío del test
     if (testForm) {
